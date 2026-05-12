@@ -59,12 +59,6 @@ public class Task3 {
 			PrintWriter writer = new PrintWriter(
 					new FileWriter("result/forecast.txt"));
 
-			// Форматирование с выравниванием столбцов
-			// %-4s - номер (4 символа, выравнивание влево)
-			// %-20s - дата/время (20 символов, выравнивание влево)
-			// %-12s - температура (12 символов, выравнивание влево)
-			// %-8s - осадки (8 символов, выравнивание влево)
-
 			writer.println(String.format("%-4s %-20s %-12s %-8s",
 					"№", "Дата/время", "Температура", "Осадки"));
 
@@ -79,10 +73,8 @@ public class Task3 {
 
 			for (int i = 0; i < time.size(); i++) {
 
-				// Получаем только дату и время (убираем букву T, добавляем пробел)
 				String dateTime = ((String) time.get(i)).replace("T", " ");
 
-				// Форматируем строку
 				String row = String.format("%-4d %-20s %3.1f°C        %-8s",
 						(i + 1),
 						dateTime,
